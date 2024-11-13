@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    text-decoration: none;
+    border: none;
+    list-style: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root{
+    --mainPadding: 8px;
+    --bodyBgColor:rgba(122, 207, 203, 0.767);
+    --mainColor:rgb(48, 100, 168);
+    --formBgColor:rgb(252, 249, 249);
+    --textColor:#555555;
+    --inputBgColor: #cecccc96;
+    --inputColor:#363636;
+    --buttonColor:rgb(252, 249, 249);
+    --hovColor:rgb(28, 77, 141);
+    --shadowColor:#969696a4;
+}
+body{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--bodyBgColor);
+}
+form{
+    background-color: var(--formBgColor);
+    max-width: 600px;
+    width: 100%;
+    padding:30px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 9px 2px var(--shadowColor);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    position: relative;
+}
+form::after{
+    content: "";
+    position: absolute;
+    width: 8px;
+    height: 100%;
+    background-color: var(--mainColor);
+    right: 0;
+    top: 0;
+    border-radius:0 5px 5px 0;
+}
+h3{
+   color: var(--mainColor);
+   padding-left: var(--mainPadding);
+}
+.username-field, .password-field{
+    padding: var(--mainPadding);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    color: var(--textColor);
+    text-transform: uppercase;
+    font-size: .9em;
+    font-weight: 500;
+}
+.username-field input, 
+.password-field input{
+    width: 100%;
+    padding: 12px 7px;
+    background-color: var(--inputBgColor);
+    border-radius: 5px;
+    font-size: 1em;
+    font-weight: 500;
+    color: var(--inputColor);
+}
+.username-field input:focus, 
+.password-field input:focus{
+    outline: 1px solid var(--mainColor);
+}
+.Ins-field{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--mainPadding);
+}
+.Ins-field .checkbox{
+    display: inline-flex;
+    gap: 5px;
+}
+.Ins-field .checkbox input, .Ins-field .checkbox label {
+    color:var(--textColor);
+    font-size: .8em;
+}
+.Ins-field a{
+    font-size: .8em;
+    color: var(--mainColor);
+}
+form input[type="submit"]{
+    display: inline-block;
+    width: 100%;
+    height: 40px;
+    padding: var(--mainPadding);
+    background-color: var(--mainColor);
+    text-align: center;
+    border-radius: 5px;
+    color: var(--buttonColor);
+    font-size: 1em;
+    font-weight: 500;
+    box-shadow: 1px 1px 9px 2px var(--shadowColor);
+    transition: all  ease;
+}
+form input[type="submit"]:hover{
+    background-color: var(--hovColor);
+    scale: 1.02;
+    letter-spacing: 1px;
+}
+@media screen and (max-width:600px) {
+    form{
+        border-radius: 0;
+    }
+    form::after{
+        display: none;
+    }
+    .Ins-field{
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+}
